@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form method="post" action="people/create">
+      <input placeholder="Enter name here" name="name" type="text">
+      <input placeholder="Session name" name="session" type="text">
+      <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+
+    <h3 id="tt_header">Time Table</h3>
+    <div class="table_wrapper">
+      <div class="table_times">
+        <% for(var time = timeMinutes.startTime; time < timeMinutes.endTime; time += 15){ %>
+        <div class="table_time"><%= Math.floor(time / 60) %>:<%= time % 60 %></div>
+        <% } %>
+      </div>
+      <div class="table">
+        <div class="table_headers">
+          <div class="table_header">Monday</div>
+          <div class="table_header">Tuesday</div>
+          <div class="table_header">Wednesday</div>
+          <div class="table_header">Thursday</div>
+          <div class="table_header">Friday</div>
+        </div>
+        <% for(var i = 0; i < (timeMinutes.endTime - timeMinutes.startTime)/15; i++){ %>
+        <div class="table_row Time_<%= i %>">
+          <% for(var t = 0; t < 5; t++){ %>
+          <div class="table_cell Slot_<%= i %>_<%= t %>" onmouseover="javascript:onMouseOver(<%= i %>,<%= t %>)" 
+            onmousedown="javascript:onMouseDown(<%= i %>,<%= t %>)" onmouseup="javascript:onMouseUp(<%= i %>,<%= t %>)"></div>
+          <% } %>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <br><br>
+
+    <h3>People</h3>
+    <% people.forEach((person) => { %>
+      <div><%= person.name %> - <%= person.session.name %></div>
+    <% }) %>
+
+    <script src="/javascripts/people.js"></script>
+
+  </body>
+</html>

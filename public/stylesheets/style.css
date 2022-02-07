@@ -1,0 +1,72 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.table_wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table {
+  height: auto;
+  width: 70%;
+  margin: 0;
+  /* table-layout: fixed; */
+}
+
+.table_times{
+  display: inline-block;
+  margin-left: 15%;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.table_headers{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  margin-bottom: 10px;
+}
+
+.table_header {
+  height: 20px;
+  margin: 0 0;
+  display: inline-block;
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.table_row {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.table_cell{
+  border: 1px solid #140400;
+  flex-basis: 100%;
+
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+#tt_header{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 32px;
+}

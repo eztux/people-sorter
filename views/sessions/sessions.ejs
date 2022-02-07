@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/sessions.css' />
+  </head>
+  <body>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form method="post" action="people/create">
+      <input placeholder="Enter name here" name="name" type="text">
+      <input placeholder="Session name" name="session" type="text">
+      <input type="submit" value="Submit">
+    </form>
+
+  </body>
+</html>
